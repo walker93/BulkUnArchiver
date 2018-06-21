@@ -33,12 +33,12 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_estrai = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.stato_label = New System.Windows.Forms.ToolStripStatusLabel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.stato_label = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.SalvaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -62,7 +62,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(332, 41)
+        Me.GroupBox1.Size = New System.Drawing.Size(453, 41)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sorgente"
@@ -70,7 +70,7 @@ Partial Class Form1
         'btn_sorgente
         '
         Me.btn_sorgente.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_sorgente.Location = New System.Drawing.Point(251, 11)
+        Me.btn_sorgente.Location = New System.Drawing.Point(372, 11)
         Me.btn_sorgente.Name = "btn_sorgente"
         Me.btn_sorgente.Size = New System.Drawing.Size(75, 23)
         Me.btn_sorgente.TabIndex = 1
@@ -82,9 +82,10 @@ Partial Class Form1
         Me.RichTextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RichTextBox1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.RichTextBox1.Location = New System.Drawing.Point(12, 106)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(413, 249)
+        Me.RichTextBox1.Size = New System.Drawing.Size(534, 249)
         Me.RichTextBox1.TabIndex = 2
         Me.RichTextBox1.Text = ""
         '
@@ -96,7 +97,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(332, 41)
+        Me.GroupBox2.Size = New System.Drawing.Size(453, 41)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Destinazione"
@@ -104,7 +105,7 @@ Partial Class Form1
         'btn_dest
         '
         Me.btn_dest.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_dest.Location = New System.Drawing.Point(251, 11)
+        Me.btn_dest.Location = New System.Drawing.Point(372, 11)
         Me.btn_dest.Name = "btn_dest"
         Me.btn_dest.Size = New System.Drawing.Size(75, 23)
         Me.btn_dest.TabIndex = 1
@@ -123,7 +124,7 @@ Partial Class Form1
         'btn_estrai
         '
         Me.btn_estrai.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_estrai.Location = New System.Drawing.Point(350, 70)
+        Me.btn_estrai.Location = New System.Drawing.Point(471, 70)
         Me.btn_estrai.Name = "btn_estrai"
         Me.btn_estrai.Size = New System.Drawing.Size(75, 23)
         Me.btn_estrai.TabIndex = 1
@@ -132,17 +133,12 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripProgressBar1, Me.ToolStripStatusLabel1, Me.stato_label})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.stato_label})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 358)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(437, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(558, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripProgressBar1
-        '
-        Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
-        Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
         '
         'ToolStripStatusLabel1
         '
@@ -150,10 +146,17 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(37, 17)
         Me.ToolStripStatusLabel1.Text = "Stato:"
         '
+        'stato_label
+        '
+        Me.stato_label.Name = "stato_label"
+        Me.stato_label.Size = New System.Drawing.Size(43, 17)
+        Me.stato_label.Text = "Pronto"
+        '
         'CheckBox1
         '
+        Me.CheckBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(350, 27)
+        Me.CheckBox1.Location = New System.Drawing.Point(471, 27)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(71, 17)
         Me.CheckBox1.TabIndex = 4
@@ -162,9 +165,9 @@ Partial Class Form1
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.SalvaToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(120, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
         '
         'ToolStripMenuItem1
         '
@@ -172,17 +175,17 @@ Partial Class Form1
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 22)
         Me.ToolStripMenuItem1.Text = "&Cancella"
         '
-        'stato_label
+        'SalvaToolStripMenuItem
         '
-        Me.stato_label.Name = "stato_label"
-        Me.stato_label.Size = New System.Drawing.Size(43, 17)
-        Me.stato_label.Text = "Pronto"
+        Me.SalvaToolStripMenuItem.Name = "SalvaToolStripMenuItem"
+        Me.SalvaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SalvaToolStripMenuItem.Text = "Salva"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(437, 380)
+        Me.ClientSize = New System.Drawing.Size(558, 380)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btn_estrai)
@@ -213,10 +216,10 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_estrai As Button
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents stato_label As ToolStripStatusLabel
+    Friend WithEvents SalvaToolStripMenuItem As ToolStripMenuItem
 End Class
